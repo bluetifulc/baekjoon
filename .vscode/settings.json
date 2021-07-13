@@ -58,7 +58,15 @@
         "xmemory": "cpp",
         "xtr1common": "cpp",
         "xhash": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "ctime": "cpp",
+        "list": "cpp",
+        "locale": "cpp",
+        "regex": "cpp",
+        "xlocbuf": "cpp",
+        "xlocmes": "cpp",
+        "xlocmon": "cpp",
+        "xloctime": "cpp"
     },
     
 }
