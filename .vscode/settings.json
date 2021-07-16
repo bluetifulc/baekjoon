@@ -1,5 +1,4 @@
-{ 
-    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+{
     "code-runner.executorMap": {
      "c": "cd $dirWithoutTrailingSlash gcc $fileName -g -o $fileNameWithoutExt && ./$fileNameWithoutExt.exe",
      // input.txt로 바로 입력.
