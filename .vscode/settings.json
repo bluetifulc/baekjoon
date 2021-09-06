@@ -6,7 +6,8 @@
      // 직접 실행후 입력할때.
      //"cpp": "cd $dirWithoutTrailingSlash && g++ $fileName -g -o $fileNameWithoutExt && ./$fileNameWithoutExt.exe", 
      }, 
-    "code-runner.runInTerminal": true,
+     "code-runner.runInTerminal": true,
+    // "code-runner.runInTerminal": true,
     "files.associations": {
         "deque": "cpp",
         "xstddef": "cpp",

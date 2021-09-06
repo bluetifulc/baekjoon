@@ -1,31 +1,53 @@
 {
-    "version": "0.2.0", 
-    "configurations": [ 
-        { 
-            "name": "(gdb) Launch",
-            "type": "cppdbg", 
-            "request": "launch", 
-            // 
-            // 이 밑 부분 파일경로, 파일명을 맞게 고쳐야합니다! 
-            // 저는 절대 경로가 편해서 절대 경로로 씁니다. 
-            // // 예) D:/Git/algorithm/BOJ/2606.exe 
-            // 혹은 D:\\Git\\algorithm\\BOJ\\2606.exe 
-            "program": "${workspaceFolder}/main.exe", "args": [], 
-            "stopAtEntry": false, 
-            "cwd": "${workspaceFolder}", 
-            "environment": [], "externalConsole": true, 
-             "MIMode": "gdb", 
-             // 
-             // MinGW 경로가 같은지 확인 ! 
-             // MinGW 설치경로/bin/gdb.exe 입니다. 
-             "miDebuggerPath": "C:/mingw64/bin/gdb.exe", 
-             "setupCommands": [ 
-                 { 
-                     "description": "Enable pretty-printing for gdb", 
-                     "text": "-enable-pretty-printing", 
-                     "ignoreFailures": true 
-                } 
-            ] 
-        } 
-    ] 
-}
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "type": "shell",
+        "label": "C/C++: g++ build active file",
+        "command": "/usr/bin/g++",
+        "args": [
+          "-std=c++17", // 2020.08.05 추가
+          "-stdlib=libc++", // 2020.08.05 추가
+          "-g",
+          "${file}",
+          "-o",
+          //수정
+          "${fileDirname}/${fileBasenameNoExtension}.out",
+  
+          //추가
+          // 1. execute .out file
+          "&&", //to join building and running of the file
+          "${fileDirname}/${fileBasenameNoExtension}.out",
+  
+          //추가
+          // 2. file input
+          "<",
+          "${fileDirname}/input.txt",
+  
+          //추가
+          //3. file output
+          ">",
+          "${fileDirname}/output.txt"
+        ],
+        "options": {
+          "cwd": "${workspaceFolder}"
+        },
+        "problemMatcher": ["$gcc"],
+        // 수정
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+      //실행 파일 추가
+      {
+        "label": "exec",
+        "type": "shell",
+        "command": "${fileDirname}/${fileBasenameNoExtension}.out",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
