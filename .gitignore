@@ -5,6 +5,8 @@ main.cpp
 .vscode
 CMakeLists.txt
 cmake-build-release-mingw
+cmake-build-debug-mingw
+cmake-build-relwithdebinfo
 /.idea/.gitignore
 /.idea/misc.xml
 /.idea/modules.xml
