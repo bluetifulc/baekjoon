@@ -44,3 +44,14 @@ WHERE A.FAVORITES=(
     WHERE A.FOOD_TYPE=B.FOOD_TYPE
 )
 ORDER BY FOOD_TYPE DESC
+
+-- 164672 조건에 부합하는 중고거래 상태 조회하기
+SELECT board_id, writer_id, title, price,
+ (CASE status 
+    WHEN  'SALE' THEN '판매중'
+    WHEN  'RESERVED' THEN '예약중'
+    WHEN  'DONE' THEN '거래완료'
+    END) AS STATUS
+FROM used_goods_board
+WHERE DATE_FORMAT(created_date, '%Y-%m-%d') = '2022-10-05'
+ORDER BY board_id desc
