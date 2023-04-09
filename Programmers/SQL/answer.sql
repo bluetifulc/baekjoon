@@ -55,3 +55,11 @@ SELECT board_id, writer_id, title, price,
 FROM used_goods_board
 WHERE DATE_FORMAT(created_date, '%Y-%m-%d') = '2022-10-05'
 ORDER BY board_id desc
+-- 59409 중성화 여부 파악하기
+SELECT animal_id, name, (
+    CASE
+    WHEN sex_upon_intake LIKE "%Neutered%" OR sex_upon_intake LIKE "%Spayed%" THEN "O"
+    ELSE "X"
+    END
+)
+FROM animal_ins
