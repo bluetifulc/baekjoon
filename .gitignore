@@ -2,6 +2,7 @@ input.txt
 tempCodeRunnerFile.cpp
 *.exe
 main.cpp
+main.py
 .vscode
 CMakeLists.txt
 cmake-build-release-mingw
